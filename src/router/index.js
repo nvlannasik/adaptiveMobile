@@ -10,15 +10,27 @@ const Stack = createNativeStackNavigator();
 const MainApp = () => {
   return (
     <Tab.Navigator tabBar={props => <TombolNav {...props} />}>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Pencarian" component={Pencarian} />
+      <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />
+      <Tab.Screen
+        name="Pencarian"
+        component={Pencarian}
+        options={{headerShown: false}}
+      />
       <Tab.Screen
         name="MateriSaya"
         component={MateriSaya}
-        options={{title: 'Materi Saya'}}
+        options={{headerShown: false}}
       />
-      <Tab.Screen name="Wishlist" component={Wishlist} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen
+        name="Wishlist"
+        component={Wishlist}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{headerShown: false}}
+      />
     </Tab.Navigator>
   );
 };
