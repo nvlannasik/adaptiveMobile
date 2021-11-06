@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import {responsiveHeight, responsiveWidht} from '../../../utils';
+import {LogoHeader, LogoKeranjang, LogoLonceng} from '../../../assets/image';
 
 export default class HeaderComponent extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> Header </Text>
+        <View style={styles.wraperHeader}>
+          <LogoHeader style={styles.logoHeader} />
+          <LogoKeranjang />
+          <LogoLonceng />
+        </View>
       </View>
     );
   }
@@ -13,7 +19,16 @@ export default class HeaderComponent extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
-    height: 61,
+    backgroundColor: 'red',
+    height: responsiveHeight(70),
+    width: responsiveWidht(375),
+  },
+  wraperHeader: {
+    paddingVertical: 9,
+  },
+  logoHeader: {
+    marginLeft: 16,
+    marginRight: 206,
+    alignItems: 'center',
   },
 });

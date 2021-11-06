@@ -1,5 +1,5 @@
 import {Dimensions} from 'react-native';
-import {widthMobileUI} from '../constant';
+import {widthMobileUI, heightMobileUI} from '../constant';
 
 export const responsiveWidht = width => {
   return (Dimensions.get('window').width * width) / widthMobileUI;

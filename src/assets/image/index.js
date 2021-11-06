@@ -1,2 +1,5 @@
 import Logo from './logo.svg';
-export {Logo};
+import LogoHeader from './logoHeader.svg';
+import LogoLonceng from './logo-lonceng.svg';
+import LogoKeranjang from './logo-keranjang.svg';
+export {Logo, LogoHeader, LogoKeranjang, LogoLonceng};
