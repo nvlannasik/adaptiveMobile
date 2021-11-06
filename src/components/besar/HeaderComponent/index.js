@@ -1,16 +1,20 @@
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {responsiveHeight, responsiveWidht} from '../../../utils';
-import {LogoHeader, LogoKeranjang, LogoLonceng} from '../../../assets/image';
+import {LogoHeader} from '../../../assets/image';
+import {Jarak, TombolLonceng, TombolNotif} from '../..';
 
 export default class HeaderComponent extends Component {
   render() {
     return (
       <View style={styles.container}>
+        {/* Ini logo header */}
         <View style={styles.wraperHeader}>
-          <LogoHeader style={styles.logoHeader} />
-          <LogoKeranjang />
-          <LogoLonceng />
+          <View style={styles.searchSection}>
+            <LogoHeader />
+          </View>
+          <TombolNotif icon="keranjang" />
+          <TombolLonceng icon="lonceng" />
         </View>
       </View>
     );
@@ -19,16 +23,19 @@ export default class HeaderComponent extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'red',
     height: responsiveHeight(70),
     width: responsiveWidht(375),
   },
   wraperHeader: {
     paddingVertical: 9,
+    flexDirection: 'row',
   },
-  logoHeader: {
-    marginLeft: 16,
-    marginRight: 206,
+  searchSection: {
     alignItems: 'center',
+    marginLeft: 16,
+  },
+  logoLonceng: {
+    marginLeft: 50,
+    marginRight: 17,
   },
 });
