@@ -10,6 +10,8 @@ import IconWishlistAktif from './wishlist-Aktif.svg';
 import IconWishlistNonAktif from './wishlist-nonAktif.svg';
 import LogoLonceng from './logo-lonceng.svg';
 import LogoKeranjang from './logo-keranjang.svg';
+import IconBintang from './bintang.png';
+import IconArrow from './arrow.png';
 
 export {
   IconHomeAktif,
@@ -24,4 +26,6 @@ export {
   IconWishlistNonAktif,
   LogoKeranjang,
   LogoLonceng,
+  IconBintang,
+  IconArrow,
 };
