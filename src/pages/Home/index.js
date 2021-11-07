@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {HeaderComponent} from '../../components/besar';
+import {StyleSheet, View, Image} from 'react-native';
+import {HeaderComponent, BannerSlider} from '../../components/besar';
 
 export default class Home extends Component {
   render() {
     return (
       <View style={styles.page}>
         <HeaderComponent />
+        <BannerSlider />
       </View>
     );
   }

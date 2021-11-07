@@ -1,4 +1,5 @@
 import TombolNav from './TombolNav';
 import HeaderComponent from './HeaderComponent';
+import BannerSlider from './BannerSlider';
 
-export {TombolNav, HeaderComponent};
+export {TombolNav, BannerSlider, HeaderComponent};
