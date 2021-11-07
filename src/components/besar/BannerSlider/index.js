@@ -3,7 +3,6 @@ import {StyleSheet, View, Text, Image} from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
 import {Banner1, Banner2, Banner3, Banner4} from '../../../assets/index';
 import {responsiveHeight, responsiveWidht} from '../../../utils';
-import Dots from 'react-native-dots-pagination';
 
 export default class BannerSlider extends Component {
   constructor(props) {
