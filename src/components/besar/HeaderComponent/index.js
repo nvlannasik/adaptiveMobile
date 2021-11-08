@@ -34,8 +34,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 16,
   },
-  logoLonceng: {
-    marginLeft: 50,
-    marginRight: 17,
-  },
 });
