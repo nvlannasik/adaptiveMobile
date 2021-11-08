@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, View} from 'react-native';
+import PencarianComponent from '../../components/besar/PencarianComponent';
 
 export default class Pencarian extends Component {
   render() {
     return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Pencarian Page</Text>
+      <View>
+        <PencarianComponent />
+        <Text>Materi Populer</Text>
       </View>
     );
   }
