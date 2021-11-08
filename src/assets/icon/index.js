@@ -12,6 +12,7 @@ import LogoLonceng from './logo-lonceng.svg';
 import LogoKeranjang from './logo-keranjang.svg';
 import IconBintang from './bintang.png';
 import IconArrow from './arrow.png';
+import AlarmIcon from './alarm.png';
 
 export {
   IconHomeAktif,
@@ -28,4 +29,5 @@ export {
   LogoLonceng,
   IconBintang,
   IconArrow,
+  AlarmIcon,
 };

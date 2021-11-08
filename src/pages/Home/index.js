@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text, ScrollView} from 'react-native';
+import {Countdown} from '../../components';
 import {
   HeaderComponent,
   BannerSlider,
@@ -19,8 +20,9 @@ export default class Home extends Component {
             <Text style={styles.tulisanPartner}> Rekomendasi Materi </Text>
             <Courses />
             <Text style={styles.tulisanPartner}> Diskon Spesial </Text>
-            <View>
+            <View style={{flexDirection: 'row'}}>
               <Text style={styles.diskon}>Berakhir Dalam</Text>
+              <Countdown />
             </View>
             <Diskon />
             <Text style={styles.tulisanPartner}> Partner Kami </Text>
@@ -48,5 +50,7 @@ const styles = StyleSheet.create({
     marginLeft: 19,
     marginTop: 4,
     marginRight: 7,
+    fontWeight: '500',
+    marginBottom: 2,
   },
 });
