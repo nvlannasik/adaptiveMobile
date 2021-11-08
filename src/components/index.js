@@ -1,2 +1,2 @@
-export * from './Small/index';
+export * from './Small';
 export * from './besar';

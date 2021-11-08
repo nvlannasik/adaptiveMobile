@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {responsiveHeight, responsiveWidht} from '../../../utils';
 import {LogoHeader} from '../../../assets/image';
-import {Jarak, TombolLonceng, TombolNotif} from '../..';
+import {TombolLonceng, TombolNotif} from '../../index';
 
 export default class HeaderComponent extends Component {
   render() {
