@@ -13,6 +13,7 @@ import LogoKeranjang from './logo-keranjang.svg';
 import IconBintang from './bintang.png';
 import IconArrow from './arrow.png';
 import AlarmIcon from './alarm.png';
+import SearchIcon from './search.png';
 
 export {
   IconHomeAktif,
@@ -30,4 +31,5 @@ export {
   IconBintang,
   IconArrow,
   AlarmIcon,
+  SearchIcon,
 };
