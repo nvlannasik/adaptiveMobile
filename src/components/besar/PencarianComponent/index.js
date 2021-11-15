@@ -1,125 +1,76 @@
-// Searching using Search Bar Filter in React Native List View
-// https://aboutreact.com/react-native-search-bar-filter-on-listview/
+import * as React from 'react';
+import {Searchbar, DefaultTheme} from 'react-native-paper';
+import {Text, StyleSheet, View, Dimensions} from 'react-native';
+import ListMateriKecil from '../../Small/ListMateriKecil';
 
-// import React in our code
-import React, {useState, useEffect} from 'react';
-
-// import all the components we are going to use
-import {
-  SafeAreaView,
-  Text,
-  StyleSheet,
-  View,
-  FlatList,
-  TextInput,
-} from 'react-native';
+const theme = {
+  ...DefaultTheme,
+  roundness: 2,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#3498db',
+    accent: '#f1c40f',
+  },
+};
 
 const PencarianComponent = () => {
-  const [search, setSearch] = useState('');
-  const [filteredDataSource, setFilteredDataSource] = useState([]);
-  const [masterDataSource, setMasterDataSource] = useState([]);
+  const [searchQuery, setSearchQuery] = React.useState('');
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(response => response.json())
-      .then(responseJson => {
-        setFilteredDataSource(responseJson);
-        setMasterDataSource(responseJson);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
-
-  const searchFilterFunction = text => {
-    // Check if searched text is not blank
-    if (text) {
-      // Inserted text is not blank
-      // Filter the masterDataSource and update FilteredDataSource
-      const newData = masterDataSource.filter(function (item) {
-        // Applying filter for the inserted text in search bar
-        const itemData = item.title
-          ? item.title.toUpperCase()
-          : ''.toUpperCase();
-        const textData = text.toUpperCase();
-        return itemData.indexOf(textData) > -1;
-      });
-      setFilteredDataSource(newData);
-      setSearch(text);
-    } else {
-      // Inserted text is blank
-      // Update FilteredDataSource with masterDataSource
-      setFilteredDataSource(masterDataSource);
-      setSearch(text);
-    }
-  };
-
-  const ItemView = ({item}) => {
-    return (
-      // Flat List Item
-      <Text style={styles.itemStyle} onPress={() => getItem(item)}>
-        {item.id}
-        {'.'}
-        {item.title.toUpperCase()}
-      </Text>
-    );
-  };
-
-  const ItemSeparatorView = () => {
-    return (
-      // Flat List Item Separator
-      <View
-        style={{
-          height: 0.5,
-          width: '100%',
-          backgroundColor: '#C8C8C8',
-        }}
-      />
-    );
-  };
-
-  const getItem = item => {
-    // Function for click on an item
-    alert('Id : ' + item.id + ' Title : ' + item.title);
-  };
+  const onChangeSearch = query => setSearchQuery(query);
 
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <View style={styles.container}>
-        <TextInput
-          style={styles.textInputStyle}
-          onChangeText={text => searchFilterFunction(text)}
-          value={search}
-          underlineColorAndroid="transparent"
-          placeholder="Search Here"
-        />
-        <FlatList
-          data={filteredDataSource}
-          keyExtractor={(item, index) => index.toString()}
-          ItemSeparatorComponent={ItemSeparatorView}
-          renderItem={ItemView}
-        />
-      </View>
-    </SafeAreaView>
+    <View>
+      <Searchbar
+        placeholder="Search"
+        onChangeText={onChangeSearch}
+        value={searchQuery}
+        style={styles.container}
+        theme={theme}
+      />
+      <Text style={{marginBottom: 8}}> Materi Populer </Text>
+      <ListMateriKecil />
+    </View>
   );
 };
 
+export default PencarianComponent;
+
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
-  },
-  itemStyle: {
-    padding: 10,
-  },
-  textInputStyle: {
+    width: 355,
     height: 40,
-    width: 343,
+    backgroundColor: 'white',
     borderRadius: 10,
-    marginHorizontal: 16,
     marginTop: 18,
-    borderColor: '#009688',
-    backgroundColor: '#FFFFFF',
+    marginHorizontal: 16,
+    marginBottom: 14,
+  },
+  containerKedua: {
+    width: Dimensions.width,
+    height: 135,
+    backgroundColor: 'red',
+    flexDirection: 'row',
+    marginTop: 16,
+  },
+  Gambarmateri: {
+    width: 80,
+    height: 83,
+    marginLeft: 16,
+    backgroundColor: 'blue',
+    borderRadius: 10,
+    marginTop: 18,
+  },
+  sprator: {
+    height: 1,
+    backgroundColor: 'black',
+    width: 355,
+    marginHorizontal: 16,
+  },
+  textContainer: {
+    marginTop: 16,
+    fontSize: 15,
+    marginLeft: 8,
+    marginRight: 16,
+    fontWeight: 'bold',
   },
 });
-
-export default PencarianComponent;

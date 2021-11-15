@@ -6,7 +6,7 @@ export default class MateriSaya extends Component {
   render() {
     return (
       <View>
-        <TombolPencarianMateri />
+        <Text>LALALALA</Text>
       </View>
     );
   }
